@@ -21,7 +21,7 @@ Python project using Pandas, NumPy, and Matplotlib.
 
 ## Live Portfolio
 
-https://udham31.github.io/portfolio/
+https://udham31.github.io/Portfolio_Udham/
 
 ## Contact
 
