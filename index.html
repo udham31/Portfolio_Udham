@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udham Singh | Data Analyst Portfolio</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#0f172a;
+            color:#ffffff;
+            line-height:1.6;
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 10%;
+            background:#020617;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+            color:#38bdf8;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+        }
+
+        nav ul li{
+            margin-left:25px;
+        }
+
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            font-size:16px;
+        }
+
+        nav ul li a:hover{
+            color:#38bdf8;
+        }
+
+        .hero{
+            min-height:90vh;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:60px 10%;
+            gap:40px;
+        }
+
+        .hero-content{
+            max-width:600px;
+        }
+
+        .hero-content h3{
+            color:#38bdf8;
+            font-size:24px;
+        }
+
+        .hero-content h1{
+            font-size:55px;
+            margin:10px 0;
+        }
+
+        .hero-content span{
+            color:#38bdf8;
+        }
+
+        .hero-content h2{
+            font-size:30px;
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            margin-bottom:25px;
+            color:#cbd5e1;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:12px 24px;
+            background:#38bdf8;
+            color:#020617;
+            text-decoration:none;
+            border-radius:6px;
+            font-weight:bold;
+            margin-right:10px;
+            margin-top:10px;
+        }
+
+        .btn-outline{
+            background:transparent;
+            color:#38bdf8;
+            border:2px solid #38bdf8;
+        }
+
+        .profile-img{
+            width:330px;
+            height:330px;
+            object-fit:cover;
+            border-radius:50%;
+            border:5px solid #38bdf8;
+        }
+
+        section{
+            padding:70px 10%;
+        }
+
+        .heading{
+            text-align:center;
+            font-size:42px;
+            color:#38bdf8;
+            margin-bottom:50px;
+            font-weight:bold;
+        }
+
+        .about-box{
+            background:#1e293b;
+            padding:30px;
+            border-radius:12px;
+            color:#cbd5e1;
+            max-width:1000px;
+            margin:auto;
+            text-align:center;
+        }
+
+        .projects{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:25px;
+        }
+
+        .project-card{
+            background:#1e293b;
+            padding:30px 28px;
+            border-radius:14px;
+            border:1px solid #334155;
+            min-height:280px;
+            transition:0.3s ease;
+        }
+
+        .project-card:hover{
+            transform:translateY(-6px);
+            border-color:#38bdf8;
+            box-shadow:0 8px 25px rgba(56,189,248,0.15);
+        }
+
+        .project-card h3{
+            color:#ffffff;
+            text-align:center;
+            font-size:23px;
+            margin-bottom:22px;
+            text-shadow:2px 2px #020617;
+        }
+
+        .project-card p{
+            color:#ffffff;
+            font-size:18px;
+            line-height:1.7;
+            text-shadow:1px 1px #020617;
+        }
+
+        .project-tech{
+            color:#38bdf8;
+            font-weight:bold;
+            text-align:center;
+            margin-top:22px;
+            font-size:19px;
+        }
+
+        .skills{
+            display:grid;
+            grid-template-columns:repeat(5, 1fr);
+            gap:25px;
+        }
+
+        .skill-box{
+            background:#1e293b;
+            padding:28px;
+            border-radius:14px;
+            border:1px solid #1f2937;
+            min-height:170px;
+            transition:0.3s ease;
+        }
+
+        .skill-box:hover{
+            transform:translateY(-6px);
+            border-color:#38bdf8;
+            box-shadow:0 8px 25px rgba(56,189,248,0.15);
+        }
+
+        .skill-box h3{
+            color:#38bdf8;
+            font-size:23px;
+            margin-bottom:15px;
+            text-shadow:1px 1px #020617;
+        }
+
+        .skill-box p{
+            color:#ffffff;
+            font-size:18px;
+            line-height:1.7;
+            text-shadow:1px 1px #020617;
+        }
+
+        .achievement-box,
+        .contact-box{
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+
+        .achievement,
+        .contact-card{
+            background:#1e293b;
+            padding:30px;
+            border-radius:12px;
+            text-align:center;
+            width:240px;
+            border:1px solid #334155;
+            transition:0.3s ease;
+        }
+
+        .achievement:hover,
+        .contact-card:hover{
+            transform:translateY(-6px);
+            border-color:#38bdf8;
+            box-shadow:0 8px 25px rgba(56,189,248,0.15);
+        }
+
+        .achievement h3,
+        .contact-card h3{
+            color:#38bdf8;
+            font-size:36px;
+            margin-bottom:10px;
+        }
+
+        .achievement p,
+        .contact-card p{
+            color:white;
+            font-size:18px;
+            margin-top:10px;
+        }
+
+        .contact-card a{
+            color:#38bdf8;
+            text-decoration:none;
+            display:block;
+            margin-top:10px;
+            font-size:15px;
+            word-wrap:break-word;
+        }
+
+        .contact-card a:hover{
+            color:white;
+        }
+
+        .resume-btn{
+            text-align:center;
+            margin-top:40px;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            background:#020617;
+            color:#94a3b8;
+        }
+
+        @media(max-width:1000px){
+            .projects{
+                grid-template-columns:repeat(2, 1fr);
+            }
+
+            .skills{
+                grid-template-columns:repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:768px){
+            nav{
+                flex-direction:column;
+            }
+
+            nav ul{
+                margin-top:15px;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            nav ul li{
+                margin:10px;
+            }
+
+            .hero{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .hero-content h1{
+                font-size:40px;
+            }
+
+            .profile-img{
+                width:250px;
+                height:250px;
+            }
+
+            .projects,
+            .skills{
+                grid-template-columns:1fr;
+            }
+
+   
+        .project-card .btn{
+            display:block;
+            text-align:center;
+            margin-top:10px;
+            width:100%;
+        }
+
+        .project-card .btn:hover{
+            background:#0ea5e9;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Udham Singh</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h3>Hello, I'm</h3>
+            <h1>Udham <span>Singh</span></h1>
+            <h2>Data Analyst Fresher</h2>
+
+            <p>
+                I am passionate about data analytics.
+                I work with SQL, Power BI, Excel, and Python to clean, analyze,
+                visualize data, and convert raw datasets into meaningful insights.
+            </p>
+
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="Udham_resume.pdf" download class="btn btn-outline">Download Resume</a>
+        </div>
+
+        <div>
+            <img src="profile.png" alt="Udham Singh Profile Photo" class="profile-img">        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="heading">About Me</h2>
+
+        <div class="about-box">
+            <p>
+                I am Udham Singh, a B.Tech Computer Science Engineering graduate from
+                Rustamji Institute of Technology, BSF Tekanpur. I am seeking an entry-level
+                Data Analyst opportunity where I can apply my knowledge of SQL, Power BI,
+                MS Excel, Python, Pandas, NumPy, and Matplotlib.
+            </p>
+            <br>
+            <p>
+                I have worked on practical data analytics projects such as OLA Sales Dashboard,
+                Retail Sales Analysis, and E-Commerce Sales Analysis. Through these projects,
+                I gained hands-on experience in data cleaning, exploratory data analysis,
+                dashboard creation, KPI tracking, trend analysis, and business reporting.
+            </p>
+        </div>
+    </section>
+
+
+<section id="projects">
+    <h2 class="heading">Projects</h2>
+
+    <div class="projects">
+
+        <!-- OLA PROJECT -->
+        <div class="project-card">
+            <h3>OLA Sales Dashboard</h3>
+
+            <p>
+                Created an interactive Power BI dashboard to analyze 99,952 bookings
+                and 34M revenue. Used DAX, Power Query, slicers, KPIs, and charts
+                to track bookings, cancellations, revenue, and ride performance.
+            </p>
+
+            <div class="project-tech">
+                Power BI • SQL • Excel • DAX
+            </div>
+
+            <br>
+
+            <a href="https://github.com/udham31/Ola-DashBoard"
+               target="_blank"
+               class="btn">
+               View Repository
+            </a>
+        </div>
+
+        <!-- RETAIL PROJECT -->
+        <div class="project-card">
+            <h3>Retail Sales Analysis</h3>
+
+            <p>
+                Performed SQL-based analysis on retail sales data using PostgreSQL.
+                Cleaned data, handled null values, and used GROUP BY, JOINS, CTEs,
+                and Window Functions to identify sales and customer trends.
+            </p>
+
+            <div class="project-tech">
+                PostgreSQL • SQL • EDA
+            </div>
+
+            <br>
+
+            <a href="https://github.com/udham31/Sql_retail_sales-Pj1"
+               target="_blank"
+               class="btn">
+               View Repository
+            </a>
+        </div>
+
+        <!-- ECOMMERCE PROJECT -->
+        <div class="project-card">
+            <h3>E-Commerce Sales Analysis</h3>
+
+            <p>
+                Analyzed e-commerce sales data using Python libraries like Pandas,
+                NumPy, and Matplotlib. Found insights related to top products,
+                categories, monthly sales trends, and profit performance.
+            </p>
+
+            <div class="project-tech">
+                Python • Pandas • Matplotlib
+            </div>
+
+            <br>
+
+            <a href="https://github.com/udham31/E-commerceSalesAnalysis"
+               target="_blank"
+               class="btn">
+               View Repository
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+
+    <section id="skills">
+        <h2 class="heading">Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill-box">
+                <h3>SQL</h3>
+                <p>Joins, Group By, Subqueries, Window Functions, CTEs</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Power BI</h3>
+                <p>Dashboard, DAX, Power Query, Data Modeling</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Excel</h3>
+                <p>Pivot Table, VLOOKUP, Charts, Data Cleaning</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Python</h3>
+                <p>Pandas, NumPy, Matplotlib, EDA</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Data Cleaning</h3>
+                <p>Missing values, duplicates, formatting, transformation</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Data Visualization</h3>
+                <p>Charts, dashboards, KPI cards, business reports</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2 class="heading">Achievements</h2>
+
+        <div class="achievement-box">
+
+            <div class="achievement">
+                <h3>15+</h3>
+                <p>Projects Completed</p>
+            </div>
+
+            <div class="achievement">
+                <h3>4+</h3>
+                <p>Certifications</p>
+            </div>
+
+            <div class="achievement">
+                <h3>100+</h3>
+                <p>Problems Solved</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="heading">Contact Me</h2>
+
+        <div class="contact-box">
+
+            <div class="contact-card">
+                <h3>📧</h3>
+                <p>Email</p>
+                <a href="mailto:udhambsr327@gmail.com">udhambsr327@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>📱</h3>
+                <p>Phone</p>
+                <a href="tel:+917817823879">+91 7817823879</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>💻</h3>
+                <p>GitHub</p>
+                <a href="https://github.com/udham31" target="_blank">github.com/udham31</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>🔗</h3>
+                <p>LinkedIn</p>
+                <a href="https://www.linkedin.com/in/udham-singh-155459227" target="_blank">LinkedIn Profile</a>
+            </div>
+
+        </div>
+
+        <div class="resume-btn">
+           <a href="Udham_resume.pdf" download class="btn btn-outline">Download Resume</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Udham Singh | Data Analyst Portfolio</p>
+    </footer>
+
+</body>
+</html>
+
